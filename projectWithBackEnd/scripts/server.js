@@ -1,7 +1,8 @@
 const express = require("express");
 const multer = require("multer");
 
-const connect = require("./config/db");
+const connect = require("./configs/db");
+const connect_product = require("./configs/db.product");
 
 const app = express();
 
@@ -21,5 +22,6 @@ app.set("view engine", "ejs");
 
 app.listen(7658, async () => {
     await connect();
+    await connect_product();
     console.log("listening to port 123456");
 });
